@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo:200,400,900&subset=hebrew");
+html,
+* {
+  font-family: "Heebo", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.document-container {
+  overflow: auto;
+}
+
+.document-container .document {
+  width: 1050px;
+}
+
+.document-container .document * {
+  font-family: PFTVilna, EFTVilna, PFTVilnaOld, FbVilna;
+}
+
+.document-container .document *::-moz-selection {
+  background: #ca0054;
+  color: wheat;
+}
+
+.document-container .document *::selection {
+  background: #ca0054;
+  color: wheat;
+}
+
+.document-container .document .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  height: 1800px;
+}
+
+.document-container .document .wrapper .gemara,
+.document-container .document .wrapper .rashi,
+.document-container .document .wrapper .tosafos {
+  overflow: visible;
+  display: inline-block;
+  text-align: justify;
+  text-align-last: justify;
+}
+
+.document-container .document .wrapper .gemara {
+  width: 410px;
+  top: 120px;
+  font-size: 1.6em;
+  line-height: 1.3em;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.document-container .document .wrapper .rashi,
+.document-container .document .wrapper .tosafos {
+  font-size: 1.3em;
+  line-height: 1.25em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.document-container .document .wrapper .rashi span.line,
+.document-container .document .wrapper .tosafos span.line {
+  font-family: PFTRashi, WolfRashi;
+  width: 285px;
+  display: block;
+}
+
+.document-container .document .wrapper .rashi span.line.md,
+.document-container .document .wrapper .tosafos span.line.md {
+  width: 507.5px;
+}
+
+.document-container .document .wrapper .rashi span.line.lg,
+.document-container .document .wrapper .tosafos span.line.lg {
+  width: 1050px;
+}
+
+.document-container .document .wrapper .rashi small,
+.document-container .document .wrapper .tosafos small {
+  font-family: inherit;
+  font-size: 0.8em;
+  line-height: 10px;
+}
+
+.document-container .document .wrapper .rashi .dibbur,
+.document-container .document .wrapper .tosafos .dibbur {
+  font-family: PFTVilna, EFTVilna, PFTVilnaOld, FbVilna;
+  font-weight: bold;
+  line-height: 10px;
+}
+
+.document-container .document .wrapper .tosafos {
+  left: 0;
+}
+
+.document-container .document .wrapper .tosafos span.line {
+  float: left;
+  clear: left;
+}
+
+.document-container .document .wrapper .tosafos .tos-dibbur-big {
+  font-weight: bold;
+  font-size: 1.6em;
+  position: relative;
+  top: 6px;
+  display: inline-block;
+  margin-left: 15px;
+  margin-bottom: -5px;
+}
+
+.document-container .document .wrapper span.bold-bigger {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.document-container .document .wrapper span.line {
+  white-space: nowrap;
+}
+
+.document-container .document .wrapper span.line:hover {
+  color: #ca0054;
+}
+
+.document-container .document .wrapper .big-title {
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 5rem;
+  text-align-last: center !important;
+}
+
+.document-container .document .wrapper .top {
+  z-index: 3;
+}
+
+.document-container .document .wrapper .mid {
+  z-index: 2;
+}
+
+.document-container .document .wrapper .bottom {
+  z-index: 1;
+}
+
+.popover {
+  background: #ca0054;
+}
+
+.popover .popover-body {
+  color: wheat;
+}
+
+.popover .popover-header {
+  background: wheat;
+  color: #ca0054;
+  font-weight: bold;
+}
+
+.popover .arrow::after {
+  border-left-color: #ca0054;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo:200,400,900&subset=hebrew");
+
+html,
+* {
+  font-family: "Heebo", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+$main-color: rgb(202, 0, 84);
+$secondary: wheat;
+
+.document-container {
+  overflow: auto;
+  .document {
+    width: 1050px;
+    & * {
+      font-family: PFTVilna, EFTVilna, PFTVilnaOld, FbVilna;
+    }
+    & *::selection {
+      background: $main-color;
+      color: $secondary;
+    }
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      height: 1800px;
+      .gemara,
+      .rashi,
+      .tosafos {
+        // width: 285px;
+        overflow: visible;
+        display: inline-block;
+        text-align: justify;
+        text-align-last: justify;
+      }
+      .gemara {
+        width: 410px;
+        top: 120px;
+        font-size: 1.6em;
+        line-height: 1.3em;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+      }
+      .rashi,
+      .tosafos {
+        font-size: 1.3em;
+        line-height: 1.25em;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        span.line {
+          font-family: PFTRashi, WolfRashi;
+          width: 285px;
+          display: block;
+          &.md {
+            width: 507.5px;
+          }
+          &.lg {
+            width: 1050px;
+          }
+        }
+        small {
+          font-family: inherit;
+          font-size: 0.8em;
+          line-height: 10px;
+        }
+        .dibbur {
+          font-family: PFTVilna, EFTVilna, PFTVilnaOld, FbVilna;
+          font-weight: bold;
+          line-height: 10px;
+        }
+      }
+      .tosafos {
+        left: 0;
+        span.line {
+          float: left;
+          clear: left;
+        }
+        .tos-dibbur-big {
+          font-weight: bold;
+          font-size: 1.6em;
+          position: relative;
+          top: 6px;
+          display: inline-block;
+          margin-left: 15px;
+          margin-bottom: -5px;
+        }
+      }
+      span.bold-bigger {
+        font-weight: bold;
+        font-size: 1.3em;
+      }
+      span.line {
+        white-space: nowrap;
+        &:hover {
+          color: $main-color;
+        }
+      }
+      .big-title {
+        margin: 20px 0;
+        font-weight: bold;
+        font-size: 5rem;
+        text-align-last: center !important;
+      }
+      .top {
+        z-index: 3;
+      }
+      .mid {
+        z-index: 2;
+      }
+      .bottom {
+        z-index: 1;
+      }
+    }
+  }
+}
+
+// bootstrap overrides
+.popover {
+  background: $main-color;
+  .popover-body {
+    color: $secondary;
+  }
+  .popover-header {
+    background: $secondary;
+    color: $main-color;
+    font-weight: bold;
+  }
+  .arrow::after {
+    border-left-color: $main-color;
+  }
+}
