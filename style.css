@@ -2,20 +2,17 @@
 @font-face {
   font-family: EFTVilna;
   src: url("./assets/fonts/PFT_vilnaHebrew.woff2") format("woff2");
-  font-display: swap;
 }
 
 @font-face {
   font-family: EFTVilna;
   src: url("./assets/fonts/PFT_vilna BoldHebrew.woff2") format("woff2");
-  font-display: swap;
   font-weight: bold;
 }
 
 @font-face {
   font-family: PFTRashi;
   src: url("./assets/fonts/PFT_RashiHebrew.woff2") format("woff2");
-  font-display: swap;
 }
 
 html,
@@ -197,6 +194,7 @@ body {
   font-weight: bold;
   font-size: 5rem;
   text-align-last: center !important;
+  text-align: center !important;
 }
 
 .document-container .document .wrapper .top {

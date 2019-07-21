@@ -13,10 +13,10 @@ jQuery(document).ready(function ($) {
     if ($(this).hasClass('rashi')) {
 
       // doing some magic with GREP 🤩
-      html = html.replace(/(?<=:\s|\<span.+?md.+?\>)(.+?\.)(.+?:)/g, (match, dibbur, body) => {
+      html = html.replace(/(:\s|\<span.+?md.+?\>)(.+?\.)(.+?:)/g, (match, g1, dibbur, body) => {
         dibbur = dibbur.replace(/(\<\/span\>\<span.+?(sm|md|lg).+?\>)/g, '</span>$1<span class="dibbur">')
         body = body.replace(/(\<\/span\>\<span.+?(sm|md|lg).+?\>)/g, '</span>$1<span class="rashi-body">')
-        return `<span class="dibbur">${dibbur}</span><span class="rashi-body">${body}</span>`
+      return `${g1}<span class="dibbur">${dibbur}</span><span class="rashi-body">${body}</span>`
       })
       html = html.replace(/(\^)([א-ת.]+)/g, (match, g1, firstWord) => { // creates BIG WORD - only if beginning of line
         return `${g1.replace('^', '')}<span class="chalon">${firstWord}</span>`
