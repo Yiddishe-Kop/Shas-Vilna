@@ -23,6 +23,26 @@ $secondary: wheat;
       background: $main-color;
       color: $secondary;
     }
+    .title {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      .page {
+        position: absolute;
+        left: 0;
+        #dropdownMenuButton {
+          font-size: 2.5rem;
+          bottom: 8px;
+          position: relative;
+          padding: 0;
+          &::after {
+            font-size: 1rem;
+            bottom: 6px;
+            position: relative;
+          }
+        }
+      }
+    }
     .wrapper {
       display: flex;
       justify-content: space-between;
@@ -137,4 +157,7 @@ $secondary: wheat;
   .arrow::after {
     border-left-color: $main-color;
   }
+}
+.dropdown-menu {
+  min-width: unset;
 }
