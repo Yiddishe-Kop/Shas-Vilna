@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Heebo:200,400,900&subset=hebrew");
 @font-face {
-  font-family: EFTVilna;
+  font-family: PFTVilna;
   src: local("PFTVilna"), local("PFTVilna-Regular"), url("./assets/fonts/PFT_vilnaHebrew.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: EFTVilna;
-  src: local("PFTVilna"), local("PFTVilna-Bold"), url("./assets/fonts/PFT_vilna BoldHebrew.woff2") format("woff2");
+  font-family: PFTVilna;
+  src: local("PFTVilna-Bold"), url("./assets/fonts/PFT_vilna BoldHebrew.woff2") format("woff2");
   font-weight: bold;
 }
 
