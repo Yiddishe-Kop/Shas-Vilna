@@ -1,4 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Heebo:200,400,900&subset=hebrew");
+@font-face {
+  font-family: EFTVilna;
+  src: url("./assets/fonts/PFT_vilnaHebrew.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: EFTVilna;
+  src: url("./assets/fonts/PFT_vilna BoldHebrew.woff2") format("woff2");
+  font-display: swap;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: PFTRashi;
+  src: url("./assets/fonts/PFT_RashiHebrew.woff2") format("woff2");
+  font-display: swap;
+}
+
 html,
 * {
   font-family: "Heebo", sans-serif;
