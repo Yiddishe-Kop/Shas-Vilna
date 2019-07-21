@@ -2,19 +2,16 @@
 
 @font-face {
   font-family: EFTVilna;
-  src: url("./assets/fonts/PFT_vilnaHebrew.woff2") format("woff2");
-  // font-display: swap;
+  src: local("PFTVilna"), local("PFTVilna-Regular"), url("./assets/fonts/PFT_vilnaHebrew.woff2") format("woff2");
 }
 @font-face {
   font-family: EFTVilna;
-  src: url("./assets/fonts/PFT_vilna\ BoldHebrew.woff2") format("woff2");
-  // font-display: swap;
+  src: local("PFTVilna"), local("PFTVilna-Bold"), url("./assets/fonts/PFT_vilna\ BoldHebrew.woff2") format("woff2");
   font-weight: bold;
 }
 @font-face {
   font-family: PFTRashi;
-  src: url("./assets/fonts/PFT_RashiHebrew.woff2") format("woff2");
-  // font-display: swap;
+  src: local("PFTRashi"), local("PFTRashi-Regular"), url("./assets/fonts/PFT_RashiHebrew.woff2") format("woff2");
 }
 
 html,
