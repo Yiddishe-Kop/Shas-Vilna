@@ -9,15 +9,17 @@ body {
   overflow-x: hidden;
 }
 
-$main-color: rgb(202, 0, 84);
+$main-color: rgb(150, 0, 62);
 $secondary: wheat;
+$vilna: PFTVilna, EFTVilna, PFTVilnaOld, FbVilna;
+$rashi: PFTRashi, WolfRashi;
 
 .document-container {
   overflow: auto;
   .document {
     width: 1050px;
     & * {
-      font-family: PFTVilna, EFTVilna, PFTVilnaOld, FbVilna;
+      font-family: $vilna;
     }
     & *::selection {
       background: $main-color;
@@ -61,7 +63,7 @@ $secondary: wheat;
         width: 410px;
         top: 120px;
         font-size: 1.6em;
-        line-height: 1.3em;
+        line-height: 0.65em;
         position: absolute;
         margin-left: auto;
         margin-right: auto;
@@ -71,61 +73,71 @@ $secondary: wheat;
       .rashi,
       .tosafos {
         font-size: 1.3em;
-        line-height: 1.25em;
+        line-height: 0.65em;
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
-        span.line {
-          font-family: PFTRashi, WolfRashi;
-          width: 285px;
-          display: block;
-          &.md {
-            width: 507.5px;
-          }
-          &.lg {
-            width: 1050px;
-          }
-        }
         small {
           font-family: inherit;
           font-size: 0.8em;
           line-height: 10px;
         }
         .dibbur {
-          font-family: PFTVilna, EFTVilna, PFTVilnaOld, FbVilna;
+          font-family: $vilna;
           font-weight: bold;
           line-height: 10px;
+          cursor: pointer;
+          position: relative;
+          z-index: 6;
+          &:hover,
+          &.hover {
+            color: $main-color;
+          }
+        }
+        .rashi-body {
+          font-family: $rashi;
+          &:hover,
+          &.hover {
+            color: $main-color;
+          }
         }
       }
       .tosafos {
         left: 0;
-        span.line {
+        span.sm,
+        span.md,
+        span.lg {
           float: left;
           clear: left;
         }
-        .tos-dibbur-big {
-          font-weight: bold;
+        .tos-not-chalon {
+          font-weight: normal;
           font-size: 1.6em;
           position: relative;
-          top: 6px;
-          display: inline-block;
-          margin-left: 15px;
-          margin-bottom: -5px;
+          top: 4px;
+          padding-left: 10px;
+          line-height: 0px;
+        }
+        .tosfot-body {
+          font-family: $rashi;
+          &:hover,
+          &.hover {
+            color: $main-color;
+          }
         }
       }
       span.bold-bigger {
         font-weight: bold;
         font-size: 1.3em;
       }
-      span.line {
-        white-space: nowrap;
-        &:hover {
-          color: $main-color;
-        }
+      i {
+        display: inline-block;
+        width: 100%;
+        line-height: 0px;
       }
       .big-title {
-        margin: 20px 0;
+        margin: 30px 0 50px;
         font-weight: bold;
         font-size: 5rem;
         text-align-last: center !important;
@@ -139,6 +151,44 @@ $secondary: wheat;
       .bottom {
         z-index: 1;
       }
+      .chalon {
+        font-weight: normal;
+        float: right;
+        font-size: 1.6em;
+        position: relative;
+        top: 6px;
+        padding-left: 25px;
+      }
+      .chalon-spacer {
+        display: inline-block !important;
+      }
+      span.sm,
+      span.md,
+      span.lg {
+        font-family: $rashi;
+        display: block;
+        &.sm {
+          width: 285px;
+        }
+        &.md {
+          width: 507.5px;
+        }
+        &.lg {
+          width: 1050px;
+        }
+      }
+      small {
+        font-family: inherit;
+        font-size: 0.8em;
+        line-height: 10px;
+        position: relative;
+        z-index: 7;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+          color: black;
+        }
+      }
     }
   }
 }
@@ -146,18 +196,32 @@ $secondary: wheat;
 // bootstrap overrides
 .popover {
   background: $main-color;
-  .popover-body {
-    color: $secondary;
-  }
   .popover-header {
+    font-family: $vilna;
+    font-size: 1.5em;
     background: $secondary;
     color: $main-color;
     font-weight: bold;
   }
+  .popover-body {
+    color: $secondary;
+    font-family: $rashi;
+    font-size: 1.2em;
+  }
   .arrow::after {
     border-left-color: $main-color;
+    border-right-color: $main-color;
   }
 }
 .dropdown-menu {
   min-width: unset;
+}
+
+.modal-body,
+.popover-body {
+  text-align: justify;
+}
+
+.modal-title {
+  font-weight: bold;
 }
