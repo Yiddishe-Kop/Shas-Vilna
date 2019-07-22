@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo:200,400,900&subset=hebrew");
+@font-face {
+  font-family: PFTVilna;
+  src: local("PFTVilna"), local("PFTVilna-Regular"), url("./assets/fonts/PFT_vilnaHebrew.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: PFTVilna;
+  src: local("PFTVilna-Bold"), url("./assets/fonts/PFT_vilna BoldHebrew.woff2") format("woff2");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: PFTRashi;
+  src: local("PFTRashi"), local("PFTRashi-Regular"), url("./assets/fonts/PFT_RashiHebrew.woff2") format("woff2");
+}
+
+html,
+* {
+  font-family: "Heebo", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.document-container {
+  overflow: auto;
+}
+
+.document-container .document {
+  width: 1050px;
+}
+
+.document-container .document * {
+  font-family: PFTVilna, EFTVilna, PFTVilnaOld, FbVilna;
+}
+
+.document-container .document *::-moz-selection {
+  background: #96003e;
+  color: wheat;
+}
+
+.document-container .document *::selection {
+  background: #96003e;
+  color: wheat;
+}
+
+.document-container .document .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.document-container .document .title .page {
+  position: absolute;
+  left: 0;
+}
+
+.document-container .document .title .page #dropdownMenuButton {
+  font-size: 2.5rem;
+  bottom: 8px;
+  position: relative;
+  padding: 0;
+}
+
+.document-container .document .title .page #dropdownMenuButton::after {
+  font-size: 1rem;
+  bottom: 6px;
+  position: relative;
+}
+
+.document-container .document .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  height: 1800px;
+}
+
+.document-container .document .wrapper .gemara,
+.document-container .document .wrapper .rashi,
+.document-container .document .wrapper .tosafos {
+  overflow: visible;
+  display: inline-block;
+  text-align: justify;
+  text-align-last: justify;
+}
+
+.document-container .document .wrapper .gemara {
+  width: 410px;
+  top: 120px;
+  font-size: 1.6em;
+  line-height: 0.65em;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.document-container .document .wrapper .rashi,
+.document-container .document .wrapper .tosafos {
+  font-size: 1.3em;
+  line-height: 0.65em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.document-container .document .wrapper .rashi small,
+.document-container .document .wrapper .tosafos small {
+  font-family: inherit;
+  font-size: 0.8em;
+  line-height: 10px;
+}
+
+.document-container .document .wrapper .rashi .dibbur,
+.document-container .document .wrapper .tosafos .dibbur {
+  font-family: PFTVilna, EFTVilna, PFTVilnaOld, FbVilna;
+  font-weight: bold;
+  line-height: 10px;
+  cursor: pointer;
+  position: relative;
+  z-index: 6;
+}
+
+.document-container .document .wrapper .rashi .dibbur:hover, .document-container .document .wrapper .rashi .dibbur.hover,
+.document-container .document .wrapper .tosafos .dibbur:hover,
+.document-container .document .wrapper .tosafos .dibbur.hover {
+  color: #96003e;
+}
+
+.document-container .document .wrapper .rashi .rashi-body,
+.document-container .document .wrapper .tosafos .rashi-body {
+  font-family: PFTRashi, WolfRashi;
+}
+
+.document-container .document .wrapper .rashi .rashi-body:hover, .document-container .document .wrapper .rashi .rashi-body.hover,
+.document-container .document .wrapper .tosafos .rashi-body:hover,
+.document-container .document .wrapper .tosafos .rashi-body.hover {
+  color: #96003e;
+}
+
+.document-container .document .wrapper .tosafos {
+  left: 0;
+}
+
+.document-container .document .wrapper .tosafos span.sm,
+.document-container .document .wrapper .tosafos span.md,
+.document-container .document .wrapper .tosafos span.lg {
+  float: left;
+  clear: left;
+}
+
+.document-container .document .wrapper .tosafos .tos-not-chalon {
+  font-weight: normal;
+  font-size: 1.6em;
+  position: relative;
+  top: 4px;
+  padding-left: 10px;
+  line-height: 0px;
+}
+
+.document-container .document .wrapper .tosafos .tosfot-body {
+  font-family: PFTRashi, WolfRashi;
+}
+
+.document-container .document .wrapper .tosafos .tosfot-body:hover, .document-container .document .wrapper .tosafos .tosfot-body.hover {
+  color: #96003e;
+}
+
+.document-container .document .wrapper span.bold-bigger {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.document-container .document .wrapper i {
+  display: inline-block;
+  width: 100%;
+  line-height: 0px;
+}
+
+.document-container .document .wrapper .big-title {
+  margin: 30px 0 50px;
+  font-weight: bold;
+  font-size: 5rem;
+  text-align-last: center !important;
+  text-align: center !important;
+}
+
+.document-container .document .wrapper .top {
+  z-index: 3;
+}
+
+.document-container .document .wrapper .mid {
+  z-index: 2;
+}
+
+.document-container .document .wrapper .bottom {
+  z-index: 1;
+}
+
+.document-container .document .wrapper .chalon {
+  font-weight: normal;
+  float: right;
+  font-size: 1.6em;
+  position: relative;
+  top: 6px;
+  padding-left: 25px;
+}
+
+.document-container .document .wrapper .chalon-spacer {
+  display: inline-block !important;
+}
+
+.document-container .document .wrapper span.sm,
+.document-container .document .wrapper span.md,
+.document-container .document .wrapper span.lg {
+  font-family: PFTRashi, WolfRashi;
+  display: block;
+}
+
+.document-container .document .wrapper span.sm.sm,
+.document-container .document .wrapper span.md.sm,
+.document-container .document .wrapper span.lg.sm {
+  width: 285px;
+}
+
+.document-container .document .wrapper span.sm.md,
+.document-container .document .wrapper span.md.md,
+.document-container .document .wrapper span.lg.md {
+  width: 507.5px;
+}
+
+.document-container .document .wrapper span.sm.lg,
+.document-container .document .wrapper span.md.lg,
+.document-container .document .wrapper span.lg.lg {
+  width: 1050px;
+}
+
+.document-container .document .wrapper small {
+  font-family: inherit;
+  font-size: 0.8em;
+  line-height: 10px;
+  position: relative;
+  z-index: 7;
+  cursor: pointer;
+}
+
+.document-container .document .wrapper small:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+.popover {
+  background: #96003e;
+}
+
+.popover .popover-header {
+  font-family: PFTVilna, EFTVilna, PFTVilnaOld, FbVilna;
+  font-size: 1.5em;
+  background: wheat;
+  color: #96003e;
+  font-weight: bold;
+}
+
+.popover .popover-body {
+  color: wheat;
+  font-family: PFTRashi, WolfRashi;
+  font-size: 1.2em;
+}
+
+.popover .arrow::after {
+  border-left-color: #96003e;
+  border-right-color: #96003e;
+}
+
+.dropdown-menu {
+  min-width: unset;
+}
+
+.modal-body,
+.popover-body {
+  text-align: justify;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+/*# sourceMappingURL=style.css.map */

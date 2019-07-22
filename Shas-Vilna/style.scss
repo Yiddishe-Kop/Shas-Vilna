@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo:200,400,900&subset=hebrew");
+
+@font-face {
+  font-family: PFTVilna;
+  src: local("PFTVilna"), local("PFTVilna-Regular"), url("./assets/fonts/PFT_vilnaHebrew.woff2") format("woff2");
+}
+@font-face {
+  font-family: PFTVilna;
+  src: local("PFTVilna-Bold"), url("./assets/fonts/PFT_vilna\ BoldHebrew.woff2") format("woff2");
+  font-weight: bold;
+}
+@font-face {
+  font-family: PFTRashi;
+  src: local("PFTRashi"), local("PFTRashi-Regular"), url("./assets/fonts/PFT_RashiHebrew.woff2") format("woff2");
+}
+
+html,
+* {
+  font-family: "Heebo", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+$main-color: rgb(150, 0, 62);
+$secondary: wheat;
+$vilna: PFTVilna, EFTVilna, PFTVilnaOld, FbVilna;
+$rashi: PFTRashi, WolfRashi;
+
+.document-container {
+  overflow: auto;
+  .document {
+    width: 1050px;
+    & * {
+      font-family: $vilna;
+    }
+    & *::selection {
+      background: $main-color;
+      color: $secondary;
+    }
+    .title {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      .page {
+        position: absolute;
+        left: 0;
+        #dropdownMenuButton {
+          font-size: 2.5rem;
+          bottom: 8px;
+          position: relative;
+          padding: 0;
+          &::after {
+            font-size: 1rem;
+            bottom: 6px;
+            position: relative;
+          }
+        }
+      }
+    }
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      height: 1800px;
+      .gemara,
+      .rashi,
+      .tosafos {
+        // width: 285px;
+        overflow: visible;
+        display: inline-block;
+        text-align: justify;
+        text-align-last: justify;
+      }
+      .gemara {
+        width: 410px;
+        top: 120px;
+        font-size: 1.6em;
+        line-height: 0.65em;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+      }
+      .rashi,
+      .tosafos {
+        font-size: 1.3em;
+        line-height: 0.65em;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        small {
+          font-family: inherit;
+          font-size: 0.8em;
+          line-height: 10px;
+        }
+        .dibbur {
+          font-family: $vilna;
+          font-weight: bold;
+          line-height: 10px;
+          cursor: pointer;
+          position: relative;
+          z-index: 6;
+          &:hover,
+          &.hover {
+            color: $main-color;
+          }
+        }
+        .rashi-body {
+          font-family: $rashi;
+          &:hover,
+          &.hover {
+            color: $main-color;
+          }
+        }
+      }
+      .tosafos {
+        left: 0;
+        span.sm,
+        span.md,
+        span.lg {
+          float: left;
+          clear: left;
+        }
+        .tos-not-chalon {
+          font-weight: normal;
+          font-size: 1.6em;
+          position: relative;
+          top: 4px;
+          padding-left: 10px;
+          line-height: 0px;
+        }
+        .tosfot-body {
+          font-family: $rashi;
+          &:hover,
+          &.hover {
+            color: $main-color;
+          }
+        }
+      }
+      span.bold-bigger {
+        font-weight: bold;
+        font-size: 1.3em;
+      }
+      i {
+        display: inline-block;
+        width: 100%;
+        line-height: 0px;
+      }
+      .big-title {
+        margin: 30px 0 50px;
+        font-weight: bold;
+        font-size: 5rem;
+        text-align-last: center !important;
+        text-align: center !important;
+      }
+      .top {
+        z-index: 3;
+      }
+      .mid {
+        z-index: 2;
+      }
+      .bottom {
+        z-index: 1;
+      }
+      .chalon {
+        font-weight: normal;
+        float: right;
+        font-size: 1.6em;
+        position: relative;
+        top: 6px;
+        padding-left: 25px;
+      }
+      .chalon-spacer {
+        display: inline-block !important;
+      }
+      span.sm,
+      span.md,
+      span.lg {
+        font-family: $rashi;
+        display: block;
+        &.sm {
+          width: 285px;
+        }
+        &.md {
+          width: 507.5px;
+        }
+        &.lg {
+          width: 1050px;
+        }
+      }
+      small {
+        font-family: inherit;
+        font-size: 0.8em;
+        line-height: 10px;
+        position: relative;
+        z-index: 7;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+// bootstrap overrides
+.popover {
+  background: $main-color;
+  .popover-header {
+    font-family: $vilna;
+    font-size: 1.5em;
+    background: $secondary;
+    color: $main-color;
+    font-weight: bold;
+  }
+  .popover-body {
+    color: $secondary;
+    font-family: $rashi;
+    font-size: 1.2em;
+  }
+  .arrow::after {
+    border-left-color: $main-color;
+    border-right-color: $main-color;
+  }
+}
+.dropdown-menu {
+  min-width: unset;
+}
+
+.modal-body,
+.popover-body {
+  text-align: justify;
+}
+
+.modal-title {
+  font-weight: bold;
+}
