@@ -82,7 +82,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
-  height: 1800px;
+  height: 1900px;
 }
 
 .document-container .document .wrapper .gemara,
@@ -98,7 +98,7 @@ body {
   width: 410px;
   top: 120px;
   font-size: 1.6em;
-  line-height: 0.65em;
+  line-height: 1.25em;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -109,7 +109,7 @@ body {
 .document-container .document .wrapper .rashi,
 .document-container .document .wrapper .tosafos {
   font-size: 1.3em;
-  line-height: 0.65em;
+  line-height: 1.3em;
   position: absolute;
   top: 0;
   right: 0;
@@ -184,17 +184,28 @@ body {
 }
 
 .document-container .document .wrapper i {
-  display: inline-block;
-  width: 100%;
-  line-height: 0px;
+  display: block;
 }
 
 .document-container .document .wrapper .big-title {
-  margin: 30px 0 50px;
+  margin: 65px 0 75px;
   font-weight: bold;
   font-size: 5rem;
   text-align-last: center !important;
   text-align: center !important;
+  position: relative;
+}
+
+.document-container .document .wrapper .big-title::before {
+  position: absolute;
+  content: "";
+  top: -60px;
+  bottom: -60px;
+  right: 0;
+  left: 0;
+  background: url("/assets/img/frame.svg") no-repeat center;
+  background-size: contain;
+  z-index: -1;
 }
 
 .document-container .document .wrapper .top {
@@ -214,7 +225,7 @@ body {
   float: right;
   font-size: 1.6em;
   position: relative;
-  top: 6px;
+  top: 12px;
   padding-left: 25px;
 }
 
