@@ -45,23 +45,37 @@ jQuery(document).ready(function ($) {
         $(this).html(html)
       }
     })
-  })
+  });
 
-  // connect whole pieces on hover
-  $('.wrapper span.rashi-body, .wrapper span.tosfot-body, .wrapper span.dibbur').hover(function () {
-    let thisClass = $(this).attr('class')
-    if ($(this).next()[0]) return
+
+  // Grouping together every dibbur with special class
+  let counter = 0;  // Global
+  $('.wrapper span.rashi-body, .wrapper span.tosfot-body, .wrapper span.dibbur').html(function () {
+    let thisClass = $(this).attr('class');
+    if ($(this).next()[0]) return;
     let next = $(this).parent().next().find(">:first-child")
     if (next.hasClass(thisClass)) {
-      next.toggleClass('hover')
+      let connectorClassName = `connector-${counter++}`;
+      $(this).addClass(connectorClassName);
+      next.addClass(connectorClassName);
       if (!next.next()[0]) { // should really find a recursive solution [maybe you can help, Shaye 😊 ?]
         let next2 = next.parent().next().find(">:first-child")
         if (next2.hasClass(thisClass)) {
-          next2.toggleClass('hover')
+          next2.addClass(connectorClassName);
         }
       }
     }
-  })
+  });
+
+
+  // adss hover class to each group
+  $('.wrapper span.rashi-body, .wrapper span.tosfot-body, .wrapper span.dibbur').hover(function () {
+    if ($(this).attr("class").includes('connector')) {
+      const groupClassName = $(this).attr("class").split(' ').filter(c => c.includes('connector'));
+        $('.' + groupClassName).toggleClass('hover');
+    }
+  });
+
 
   // creates biur
   $('.dibbur').attr({
