@@ -24,6 +24,19 @@ body {
   overflow-x: hidden;
 }
 
+@page {
+  size: auto;
+  margin: 0mm;
+  padding: 10mm 5mm;
+  prince-shrink-to-fit: auto;
+}
+
+@media print {
+  .document-container {
+    page-break-inside: avoid;
+  }
+}
+
 .document-container {
   overflow: auto;
 }

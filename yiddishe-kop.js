@@ -72,22 +72,26 @@ jQuery(document).ready(function ($) {
   $('.wrapper span.rashi-body, .wrapper span.tosfot-body, .wrapper span.dibbur').hover(function () {
     if ($(this).attr("class").includes('connector')) {
       const groupClassName = $(this).attr("class").split(' ').filter(c => c.includes('connector'));
-        $('.' + groupClassName).toggleClass('hover');
+      $('.' + groupClassName).toggleClass('hover');
     }
   });
 
 
-  // creates biur
-  $('.dibbur').attr({
-    'data-container': 'body',
-    'data-toggle': "popover",
-    'data-placement': "left",
-    'title': function () {
-      return $(this).text()
-    },
-    'data-content': function () {
-      return $(this).next().text()
-    }
+  // creates biur popover
+  $('.dibbur').each(function () {
+    let dibbur = $(this)
+    if (!/[א-ת]/.test(dibbur.next().text())) return
+    dibbur.attr({
+      'data-container': 'body',
+      'data-toggle': "popover",
+      'data-placement': "left",
+      'title': function () {
+        return dibbur.text()
+      },
+      'data-content': function () {
+        return dibbur.next().text()
+      }
+    })
   })
 
   // creates popup for mekoros
